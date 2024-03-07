@@ -1,13 +1,14 @@
 version: '3.8'
 services:
-    kamae-challenge:
+    kamae-challenge-dev:
         build:
             context: .
             dockerfile: Dockerfile
         volumes:
             - ./:/app
+            - /app/node_modules
         ports:
-            - '5173:5173'
+            - 5173:5173
         command: npm run dev
         environment:
             - NODE_ENV=development

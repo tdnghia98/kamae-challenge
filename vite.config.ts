@@ -1,8 +1,11 @@
 import path from 'path';
 import react from '@vitejs/plugin-react';
-import { defineConfig } from 'vite';
+import { UserConfig, defineConfig } from 'vite';
 
-export default defineConfig({
+export const defaultConfig: UserConfig = {
+    server: {
+        host: true,
+    },
     plugins: [react()],
     resolve: {
         alias: {
@@ -10,4 +13,5 @@ export default defineConfig({
         },
     },
     base: '/kamae-challenge/',
-});
+};
+export default defineConfig(defaultConfig);
